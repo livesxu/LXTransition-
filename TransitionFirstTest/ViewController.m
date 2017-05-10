@@ -7,21 +7,153 @@
 //
 
 #import "ViewController.h"
+#import "NextViewController.h"
+#import "PushNextViewController.h"
+#import "LXTransitionManager.h"
 
-@interface ViewController ()
+
+@interface ViewController ()<LXTransitionManagerDelegate>
+
+@property (nonatomic, strong)  UIViewController *vc1;
+
+@property (nonatomic, strong)  UIViewController *vc2;
+
+@property (nonatomic, strong)  LXTransitionManager *manager;
+
+@property (nonatomic, strong)  NextViewController *next;
 
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+-(void)dealloc{
+    
+    NSLog(@"From被销毁了");
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    self.view.backgroundColor=[UIColor redColor];
+    
+    _next=[[NextViewController alloc]init];
+    
+    _manager = [[LXTransitionManager alloc]init];
+    
+    _manager.delegate=self;
+    
+    [_manager presentConfigurationWithOneViewController:self ToViewController:_next ToType:LXPresentTypeRightPushCard BackType:LXDismissTypeRightPopCard];
+ 
 }
+- (IBAction)pushSo:(id)sender {
+    
+    PushNextViewController *pushVC=[[PushNextViewController alloc]init];
+    
+    [LXTransitionManager startTransitionManager].delegate=self;
+    
+    [[LXTransitionManager startTransitionManager]pushConfigurationWithOneViewController:self ToViewController:pushVC ToType:LXPresentTypeRightPushCard BackType:LXDismissTypeRightPopCard];
+    
+}
+- (IBAction)pushFold:(id)sender {
+    PushNextViewController *pushVC=[[PushNextViewController alloc]init];
+    
+    [LXTransitionManager startTransitionManager].delegate=self;
+    
+    [[LXTransitionManager startTransitionManager]pushConfigurationWithOneViewController:self ToViewController:pushVC ToType:LXPresentTypePushFold BackType:LXDismissTypePopFold];
+
+}
+
+- (IBAction)pushTurn:(id)sender {
+    PushNextViewController *pushVC=[[PushNextViewController alloc]init];
+    
+    [LXTransitionManager startTransitionManager].delegate=self;
+    
+    [[LXTransitionManager startTransitionManager]pushConfigurationWithOneViewController:self ToViewController:pushVC ToType:LXPresentTypePushTurn BackType:LXDismissTypePopTurn];
+
+}
+
+- (IBAction)pushHurl:(id)sender {
+    PushNextViewController *pushVC=[[PushNextViewController alloc]init];
+    
+    [LXTransitionManager startTransitionManager].delegate=self;
+    
+    [[LXTransitionManager startTransitionManager]pushConfigurationWithOneViewController:self ToViewController:pushVC ToType:LXPresentTypePushHurl BackType:LXDismissTypePopHurl];
+
+}
+- (IBAction)pushCube:(id)sender {
+    PushNextViewController *pushVC=[[PushNextViewController alloc]init];
+    
+    [LXTransitionManager startTransitionManager].delegate=self;
+    
+    [[LXTransitionManager startTransitionManager]pushConfigurationWithOneViewController:self ToViewController:pushVC ToType:LXPresentTypePushCube BackType:LXDismissTypePopCube];
+
+}
+- (IBAction)pushFlip:(id)sender {
+    PushNextViewController *pushVC=[[PushNextViewController alloc]init];
+    
+    [LXTransitionManager startTransitionManager].delegate=self;
+    
+    [[LXTransitionManager startTransitionManager]pushConfigurationWithOneViewController:self ToViewController:pushVC ToType:LXPresentTypePushFlip BackType:LXDismissTypePopFlip];
+
+}
+
+
+
+- (IBAction)presentSo:(id)sender {
+    
+    
+//    NextViewController *next=[[NextViewController alloc]init];
+//    
+//    [LXTransitionManager startTransitionManager].delegate=self;
+//    
+//    [[LXTransitionManager startTransitionManager]presentConfigurationWithOneViewController:self ToViewController:next ToType:LXPresentTypePushHurl BackType:LXDismissTypePopHurl];
+//  
+    
+    [self presentViewController:_next animated:YES completion:nil];
+}
+
+- (IBAction)presentCircle:(id)sender {
+    NextViewController *next=[[NextViewController alloc]init];
+    
+    [LXTransitionManager startTransitionManager].delegate=self;
+    
+    [[LXTransitionManager startTransitionManager]presentConfigurationWithOneViewController:self ToViewController:next ToType:LXPresentTypeCircleSpread BackType:LXDismissTypeCircleSpread];
+}
+
+- (IBAction)presentpage:(id)sender {
+    NextViewController *next=[[NextViewController alloc]init];
+    
+    [LXTransitionManager startTransitionManager].delegate=self;
+    
+    [[LXTransitionManager startTransitionManager]presentConfigurationWithOneViewController:self ToViewController:next ToType:LXPresentTypePageJust BackType:LXDismissTypePageJust];
+}
+
+-(NSTimeInterval)presentDuration{
+    
+    return 2;
+}
+
+-(NSTimeInterval)dismissDuration{
+    
+    return 2;
+}
+-(CGRect)circleBegainAnimationForLXPresentTypeCircleSpread{
+    
+    
+    return CGRectMake(300, 300, 30, 20);
+}
+
+-(LXInteractiveTransition *)addPanInteractiveGestureControl{
+    
+    
+    return [LXInteractiveTransition interactiveExplain:LXInteractiveTypeDismiss optionGesture:LXGestureTypeRight];
+    
+}
+
+//- (void)appendGoInteractiveGestureControl:(LXInteractiveTransition *)interactiveTransition{
+//    
+//    [interactiveTransition addGoPanGestureAfterWith:LXInteractiveTypePresent optionGoGesture:LXGestureTypeLeft];
+//}
 
 @end

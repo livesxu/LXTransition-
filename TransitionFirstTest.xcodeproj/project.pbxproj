@@ -15,6 +15,12 @@
 		520AB7B41CCE549200E69C04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 520AB7B21CCE549200E69C04 /* LaunchScreen.storyboard */; };
 		520AB7BF1CCE549200E69C04 /* TransitionFirstTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 520AB7BE1CCE549200E69C04 /* TransitionFirstTestTests.m */; };
 		520AB7CA1CCE549200E69C04 /* TransitionFirstTestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 520AB7C91CCE549200E69C04 /* TransitionFirstTestUITests.m */; };
+		520AB7D91CCE54AA00E69C04 /* NextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 520AB7D81CCE54AA00E69C04 /* NextViewController.m */; };
+		520AB7E71CCEE70600E69C04 /* LXDismissAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = 520AB7E21CCEE70600E69C04 /* LXDismissAnimations.m */; };
+		520AB7E81CCEE70600E69C04 /* LXPresentAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = 520AB7E41CCEE70600E69C04 /* LXPresentAnimations.m */; };
+		520AB7E91CCEE70600E69C04 /* LXTransitionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 520AB7E61CCEE70600E69C04 /* LXTransitionManager.m */; };
+		52A9978A1CD2E185007F243D /* PushNextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A997891CD2E185007F243D /* PushNextViewController.m */; };
+		52A9978D1CD35950007F243D /* LXInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A9978C1CD35950007F243D /* LXInteractiveTransition.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +57,18 @@
 		520AB7C51CCE549200E69C04 /* TransitionFirstTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransitionFirstTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		520AB7C91CCE549200E69C04 /* TransitionFirstTestUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransitionFirstTestUITests.m; sourceTree = "<group>"; };
 		520AB7CB1CCE549200E69C04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		520AB7D71CCE54AA00E69C04 /* NextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NextViewController.h; sourceTree = "<group>"; };
+		520AB7D81CCE54AA00E69C04 /* NextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextViewController.m; sourceTree = "<group>"; };
+		520AB7E11CCEE70600E69C04 /* LXDismissAnimations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXDismissAnimations.h; sourceTree = "<group>"; };
+		520AB7E21CCEE70600E69C04 /* LXDismissAnimations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXDismissAnimations.m; sourceTree = "<group>"; };
+		520AB7E31CCEE70600E69C04 /* LXPresentAnimations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXPresentAnimations.h; sourceTree = "<group>"; };
+		520AB7E41CCEE70600E69C04 /* LXPresentAnimations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXPresentAnimations.m; sourceTree = "<group>"; };
+		520AB7E51CCEE70600E69C04 /* LXTransitionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXTransitionManager.h; sourceTree = "<group>"; };
+		520AB7E61CCEE70600E69C04 /* LXTransitionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXTransitionManager.m; sourceTree = "<group>"; };
+		52A997881CD2E185007F243D /* PushNextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNextViewController.h; sourceTree = "<group>"; };
+		52A997891CD2E185007F243D /* PushNextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushNextViewController.m; sourceTree = "<group>"; };
+		52A9978B1CD35950007F243D /* LXInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXInteractiveTransition.h; sourceTree = "<group>"; };
+		52A9978C1CD35950007F243D /* LXInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXInteractiveTransition.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +119,15 @@
 		520AB7A31CCE549200E69C04 /* TransitionFirstTest */ = {
 			isa = PBXGroup;
 			children = (
+				520AB7E01CCEE70600E69C04 /* LXTransitionT */,
 				520AB7A71CCE549200E69C04 /* AppDelegate.h */,
 				520AB7A81CCE549200E69C04 /* AppDelegate.m */,
 				520AB7AA1CCE549200E69C04 /* ViewController.h */,
 				520AB7AB1CCE549200E69C04 /* ViewController.m */,
+				520AB7D71CCE54AA00E69C04 /* NextViewController.h */,
+				520AB7D81CCE54AA00E69C04 /* NextViewController.m */,
+				52A997881CD2E185007F243D /* PushNextViewController.h */,
+				52A997891CD2E185007F243D /* PushNextViewController.m */,
 				520AB7AD1CCE549200E69C04 /* Main.storyboard */,
 				520AB7B01CCE549200E69C04 /* Assets.xcassets */,
 				520AB7B21CCE549200E69C04 /* LaunchScreen.storyboard */,
@@ -138,6 +161,21 @@
 				520AB7CB1CCE549200E69C04 /* Info.plist */,
 			);
 			path = TransitionFirstTestUITests;
+			sourceTree = "<group>";
+		};
+		520AB7E01CCEE70600E69C04 /* LXTransitionT */ = {
+			isa = PBXGroup;
+			children = (
+				520AB7E11CCEE70600E69C04 /* LXDismissAnimations.h */,
+				520AB7E21CCEE70600E69C04 /* LXDismissAnimations.m */,
+				520AB7E31CCEE70600E69C04 /* LXPresentAnimations.h */,
+				520AB7E41CCEE70600E69C04 /* LXPresentAnimations.m */,
+				52A9978B1CD35950007F243D /* LXInteractiveTransition.h */,
+				52A9978C1CD35950007F243D /* LXInteractiveTransition.m */,
+				520AB7E51CCEE70600E69C04 /* LXTransitionManager.h */,
+				520AB7E61CCEE70600E69C04 /* LXTransitionManager.m */,
+			);
+			path = LXTransitionT;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,8 +311,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				520AB7E91CCEE70600E69C04 /* LXTransitionManager.m in Sources */,
+				52A9978A1CD2E185007F243D /* PushNextViewController.m in Sources */,
 				520AB7AC1CCE549200E69C04 /* ViewController.m in Sources */,
+				520AB7D91CCE54AA00E69C04 /* NextViewController.m in Sources */,
+				52A9978D1CD35950007F243D /* LXInteractiveTransition.m in Sources */,
+				520AB7E71CCEE70600E69C04 /* LXDismissAnimations.m in Sources */,
 				520AB7A91CCE549200E69C04 /* AppDelegate.m in Sources */,
+				520AB7E81CCEE70600E69C04 /* LXPresentAnimations.m in Sources */,
 				520AB7A61CCE549200E69C04 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -499,6 +543,7 @@
 				520AB7D01CCE549200E69C04 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		520AB7D11CCE549200E69C04 /* Build configuration list for PBXNativeTarget "TransitionFirstTestTests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +552,7 @@
 				520AB7D31CCE549200E69C04 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		520AB7D41CCE549200E69C04 /* Build configuration list for PBXNativeTarget "TransitionFirstTestUITests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +561,7 @@
 				520AB7D61CCE549200E69C04 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
