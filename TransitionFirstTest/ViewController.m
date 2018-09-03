@@ -36,16 +36,8 @@
     [super viewDidLoad];
 
     self.view.backgroundColor=[UIColor redColor];
-    
-    _next=[[NextViewController alloc]init];
-    
-    _manager = [[LXTransitionManager alloc]init];
-    
-    _manager.delegate=self;
-    
-    [_manager presentConfigurationWithOneViewController:self ToViewController:_next ToType:LXPresentTypeRightPushCard BackType:LXDismissTypeRightPopCard];
- 
 }
+
 - (IBAction)pushSo:(id)sender {
     
     PushNextViewController *pushVC=[[PushNextViewController alloc]init];
@@ -53,6 +45,8 @@
     [LXTransitionManager startTransitionManager].delegate=self;
     
     [[LXTransitionManager startTransitionManager]pushConfigurationWithOneViewController:self ToViewController:pushVC ToType:LXPresentTypeRightPushCard BackType:LXDismissTypeRightPopCard];
+    
+    [self.navigationController pushViewController:pushVC animated:YES];
     
 }
 - (IBAction)pushFold:(id)sender {
@@ -62,6 +56,7 @@
     
     [[LXTransitionManager startTransitionManager]pushConfigurationWithOneViewController:self ToViewController:pushVC ToType:LXPresentTypePushFold BackType:LXDismissTypePopFold];
 
+    [self.navigationController pushViewController:pushVC animated:YES];
 }
 
 - (IBAction)pushTurn:(id)sender {
@@ -71,6 +66,7 @@
     
     [[LXTransitionManager startTransitionManager]pushConfigurationWithOneViewController:self ToViewController:pushVC ToType:LXPresentTypePushTurn BackType:LXDismissTypePopTurn];
 
+    [self.navigationController pushViewController:pushVC animated:YES];
 }
 
 - (IBAction)pushHurl:(id)sender {
@@ -80,6 +76,7 @@
     
     [[LXTransitionManager startTransitionManager]pushConfigurationWithOneViewController:self ToViewController:pushVC ToType:LXPresentTypePushHurl BackType:LXDismissTypePopHurl];
 
+    [self.navigationController pushViewController:pushVC animated:YES];
 }
 - (IBAction)pushCube:(id)sender {
     PushNextViewController *pushVC=[[PushNextViewController alloc]init];
@@ -88,6 +85,7 @@
     
     [[LXTransitionManager startTransitionManager]pushConfigurationWithOneViewController:self ToViewController:pushVC ToType:LXPresentTypePushCube BackType:LXDismissTypePopCube];
 
+    [self.navigationController pushViewController:pushVC animated:YES];
 }
 - (IBAction)pushFlip:(id)sender {
     PushNextViewController *pushVC=[[PushNextViewController alloc]init];
@@ -96,21 +94,21 @@
     
     [[LXTransitionManager startTransitionManager]pushConfigurationWithOneViewController:self ToViewController:pushVC ToType:LXPresentTypePushFlip BackType:LXDismissTypePopFlip];
 
+    [self.navigationController pushViewController:pushVC animated:YES];
 }
 
 
 
 - (IBAction)presentSo:(id)sender {
     
+    NextViewController *next=[[NextViewController alloc]init];
     
-//    NextViewController *next=[[NextViewController alloc]init];
-//    
-//    [LXTransitionManager startTransitionManager].delegate=self;
-//    
-//    [[LXTransitionManager startTransitionManager]presentConfigurationWithOneViewController:self ToViewController:next ToType:LXPresentTypePushHurl BackType:LXDismissTypePopHurl];
-//  
+    [LXTransitionManager startTransitionManager].delegate=self;
     
-    [self presentViewController:_next animated:YES completion:nil];
+    [[LXTransitionManager startTransitionManager]presentConfigurationWithOneViewController:self ToViewController:next ToType:LXPresentTypePushHurl BackType:LXDismissTypePopHurl];
+    
+    [self presentViewController:next animated:YES completion:nil];
+
 }
 
 - (IBAction)presentCircle:(id)sender {
@@ -119,6 +117,8 @@
     [LXTransitionManager startTransitionManager].delegate=self;
     
     [[LXTransitionManager startTransitionManager]presentConfigurationWithOneViewController:self ToViewController:next ToType:LXPresentTypeCircleSpread BackType:LXDismissTypeCircleSpread];
+    
+    [self presentViewController:next animated:YES completion:nil];
 }
 
 - (IBAction)presentpage:(id)sender {
@@ -127,6 +127,8 @@
     [LXTransitionManager startTransitionManager].delegate=self;
     
     [[LXTransitionManager startTransitionManager]presentConfigurationWithOneViewController:self ToViewController:next ToType:LXPresentTypePageJust BackType:LXDismissTypePageJust];
+    
+    [self presentViewController:next animated:YES completion:nil];
 }
 
 -(NSTimeInterval)presentDuration{

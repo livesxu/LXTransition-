@@ -35,7 +35,7 @@
 }
 -(void)buttonClick{
     
-    
+    [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 
